@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=ROTA_SW Pin=C23-1
+Removed Pin From Net: NetName=GND Pin=C23-2
+Removed Pin From Net: NetName=ROTA_DATA Pin=C24-1
+Removed Pin From Net: NetName=GND Pin=C24-2
+Removed Pin From Net: NetName=ROTA_CLK Pin=C25-1
+Removed Pin From Net: NetName=GND Pin=C25-2
+Removed Member From Class: ClassName=MCU_ATMEGA328P Member=C23
+Removed Member From Class: ClassName=MCU_ATMEGA328P Member=C24
+Removed Member From Class: ClassName=MCU_ATMEGA328P Member=C25

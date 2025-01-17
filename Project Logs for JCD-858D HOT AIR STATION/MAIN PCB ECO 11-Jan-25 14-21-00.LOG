@@ -1,0 +1,45 @@
+Removed Pin From Net: NetName=+5VDC Pin=J1-1
+Removed Pin From Net: NetName=ROTA_CLK Pin=J1-2
+Removed Pin From Net: NetName=ROTA_DATA Pin=J1-3
+Removed Pin From Net: NetName=ROTA_SW Pin=J1-4
+Removed Pin From Net: NetName=GND Pin=J1-5
+Removed Pin From Net: NetName=AC_L Pin=R4-2
+Removed Pin From Net: NetName=AC_N Pin=R10-2
+Removed Pin From Net: NetName=NetCONN1_1 Pin=R28-1
+Removed Pin From Net: NetName=ROTA_SW Pin=R34-1
+Removed Pin From Net: NetName=+5VDC Pin=R34-2
+Removed Pin From Net: NetName=ROTA_DATA Pin=R35-1
+Removed Pin From Net: NetName=+5VDC Pin=R35-2
+Removed Pin From Net: NetName=ROTA_CLK Pin=R36-1
+Removed Pin From Net: NetName=+5VDC Pin=R36-2
+Removed Pin From Net: NetName=TFT_DC Pin=U5-12
+Removed Pin From Net: NetName=TFT_RST Pin=U5-13
+Removed Pin From Net: NetName=TFT_CS Pin=U5-14
+Removed Pin From Net: NetName=TFT_MOSI Pin=U5-15
+Removed Pin From Net: NetName=LED_FC0 Pin=U5-16
+Removed Pin From Net: NetName=TFT_SCLK Pin=U5-17
+Removed Member From Class: ClassName=MCU_ATMEGA328P Member=J1
+Removed Member From Class: ClassName=MCU_ATMEGA328P Member=R34
+Removed Member From Class: ClassName=MCU_ATMEGA328P Member=R35
+Removed Member From Class: ClassName=MCU_ATMEGA328P Member=R36
+Change Component Comment : Designator=R22 Old Comment=100K New Comment=300K
+Added Component: Designator=U?(Diode Bridge SMD)
+Added Pin To Net: NetName=AC_N Pin=R28-1
+Added Pin To Net: NetName=AC_L Pin=U?-3
+Added Pin To Net: NetName=AC_N Pin=U?-4
+Added Pin To Net: NetName=clk Pin=U5-17
+Added Net: Name=clk
+Added Pin To Net: NetName=miso Pin=U5-16
+Added Net: Name=miso
+Added Pin To Net: NetName=mosi Pin=U5-15
+Added Net: Name=mosi
+Added Pin To Net: NetName=NetR4_2 Pin=R4-2
+Added Pin To Net: NetName=NetR4_2 Pin=U?-1
+Added Net: Name=NetR4_2
+Added Pin To Net: NetName=NetR10_2 Pin=R10-2
+Added Pin To Net: NetName=NetR10_2 Pin=U?-2
+Added Net: Name=NetR10_2
+Added Pin To Net: NetName=ss Pin=U5-14
+Added Net: Name=ss
+Added Member To Class: ClassName=MCU_ATMEGA328P Member=Component JP1 JP6 PIN
+Added Member To Class: ClassName=SENSOR Member=Component U?
