@@ -1,0 +1,18 @@
+Removed Pin From Net: NetName=AC-N Pin=C2-1
+Removed Pin From Net: NetName=AC-N Pin=L1-1
+Removed Pin From Net: NetName=AC-L Pin=PAD1-1
+Removed Pin From Net: NetName=AC-L Pin=PAD2-1
+Removed Pin From Net: NetName=AC-N Pin=PAD3-1
+Removed Pin From Net: NetName=AC-N Pin=PAD4-1
+Added Pin To Net: NetName=AC-N Pin=C2-2
+Added Pin To Net: NetName=AC-N Pin=L1-4
+Added Pin To Net: NetName=AC-N Pin=PAD1-1
+Added Pin To Net: NetName=AC-N Pin=PAD2-1
+Added Pin To Net: NetName=AC-L Pin=PAD3-1
+Added Pin To Net: NetName=AC-L Pin=PAD4-1
+Added Pin To Net: NetName=NetC2_1 Pin=C2-1
+Added Pin To Net: NetName=NetC2_1 Pin=F1-2
+Added Pin To Net: NetName=NetC2_1 Pin=L1-1
+Added Net: Name=NetC2_1
+Added Room: Name=hakko-907
+Added Room: Name=hot_air

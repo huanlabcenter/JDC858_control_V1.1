@@ -1,0 +1,8 @@
+Change Component Footprint: Designator=D1 Old Footprint=DIODE/POW/1A New Footprint=DO-214AC(SMA)
+Added Component: Designator=D7(DO-41_V)
+Added Pin To Net: NetName=5V Pin=D7-2
+Added Pin To Net: NetName=NetD7_1 Pin=D7-1
+Added Pin To Net: NetName=NetD7_1 Pin=Q2-3
+Added Pin To Net: NetName=NetD7_1 Pin=RL1-2
+Added Net: Name=NetD7_1
+Added Member To Class: ClassName=hot_air Member=Component D7

@@ -1,0 +1,159 @@
+Removed Pin From Net: NetName=3.3V_BUS Pin=C15-1
+Removed Pin From Net: NetName=NetC15_2 Pin=C15-2
+Removed Pin From Net: NetName=NetC16_2 Pin=C17-1
+Removed Pin From Net: NetName=GND Pin=C17-2
+Removed Pin From Net: NetName=VCC Pin=D5-1
+Removed Pin From Net: NetName=VCC Pin=R56-1
+Removed Pin From Net: NetName=GND Pin=U7-2
+Removed Pin From Net: NetName=GND Pin=U7-2
+Removed Pin From Net: NetName=GND Pin=U7-3
+Removed Pin From Net: NetName=GND Pin=U7-3
+Removed Pin From Net: NetName=5V Pin=U7-4
+Removed Pin From Net: NetName=5V Pin=U7-4
+Removed Member From Class: ClassName=hot_air Member=R56
+Change Component Footprint: Designator=C15 Old Footprint=C0805 New Footprint=C1206
+Change Component Footprint: Designator=C17 Old Footprint=C0805 New Footprint=C1206
+Change Component Footprint: Designator=C18 Old Footprint=C0805 New Footprint=CAP-TH-8MM
+Change Component Footprint: Designator=D5 Old Footprint=DO-41_V New Footprint=DO-214AC(SMA)
+Change Component Footprint: Designator=U7 Old Footprint=mini560 New Footprint=SOP-8-PAD
+Change Component Footprint: Designator=R59 Old Footprint=RES_TH-1/4W New Footprint=R0805
+Change Component Comment : Designator=D5 Old Comment= New Comment=1N5822/SS34
+Change Component Comment : Designator=C15 Old Comment=100uF New Comment=100nF
+Change Component Comment : Designator=C17 Old Comment=100uF New Comment=100nF
+Change Component Comment : Designator=C18 Old Comment=100uF New Comment=1000uF
+Change Component Comment : Designator=U7 Old Comment=mini560 New Comment=XL1509-ADJ
+Change Component Designator: OldDesignator=Q? NewDesignator=Q5
+Change component parameters: Designator = "D5" ("D5"); Footprint = "DO-41_V"; UniqueID = "\ZSUWAUTL" ("\ZSUWAUTL")
+Change component parameters (AddParameter): Name = "Value"; Value = "1N4007"; VariantName = "[No Variations]"
+Added Component: Designator=C22(CAP-TH-8MM)
+Added Component: Designator=L3(L-SMD-06030-7.4x6.6X3)
+Add component (AddParameter): Name = "Value"; Value = "150 mH"; VariantName = "[No Variations]"
+Added Component: Designator=Q4(SOT-23)
+Added Component: Designator=R52(R0805)
+Added Component: Designator=R53(R0603)
+Add component (AddParameter): Name = "Case Code (Imperial)"; Value = "0402"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case Code (Metric)"; Value = "1005"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case/Package"; Value = "0402"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Chip SMD Resistors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "https://datasheet.ciiva.com/24341/sei-rmcp-24341800.pdf?src-supplier=Onlinecomponents.com"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://datasheet.ciiva.com/24341/sei-rmcp-24341800.pdf?src-supplier=Onlinecomponents.com"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Construction"; Value = "Rectangular"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Plating"; Value = "Tin,Matte"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Depth"; Value = "0.5mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Features"; Value = "Automotive AEC-Q200"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.016inch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Free"; Value = "Lead Free"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Length"; Value = "1mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Stackpole Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "RMCF0402FT10K0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "155°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Power Dissipation"; Value = "63mW"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Military Standard"; Value = "Not"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Terminations"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power Rating"; Value = "63mW"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=0.1, 10=0.021, 50=0.0116, 100=0.0093, 500=0.00594, 1000=0.005, 5000=0.00345, 10000=0.00299, 20000=0.00261, 30000=0.00242, 50000=0.00221, 100000=0.00196 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Radiation Hardening"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ratings"; Value = "AEC-Q200"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = "10kR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Series"; Value = "RMCF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Size Code"; Value = "0402"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "3729291"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Coefficient"; Value = "100ppm/°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "50V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Width"; Value = "0.02inch"; VariantName = "[No Variations]"
+Added Component: Designator=R54(R0603)
+Add component (AddParameter): Name = "Case Code (Imperial)"; Value = "0402"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case Code (Metric)"; Value = "1005"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case/Package"; Value = "0402"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Chip SMD Resistors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "https://datasheet.ciiva.com/24341/sei-rmcp-24341800.pdf?src-supplier=Onlinecomponents.com"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://datasheet.ciiva.com/24341/sei-rmcp-24341800.pdf?src-supplier=Onlinecomponents.com"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Construction"; Value = "Rectangular"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Plating"; Value = "Tin,Matte"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Depth"; Value = "0.5mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Features"; Value = "Automotive AEC-Q200"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.016inch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Free"; Value = "Lead Free"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Length"; Value = "1mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Stackpole Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "RMCF0402FT10K0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "155°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Power Dissipation"; Value = "63mW"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Military Standard"; Value = "Not"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Terminations"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power Rating"; Value = "63mW"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=0.1, 10=0.021, 50=0.0116, 100=0.0093, 500=0.00594, 1000=0.005, 5000=0.00345, 10000=0.00299, 20000=0.00261, 30000=0.00242, 50000=0.00221, 100000=0.00196 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Radiation Hardening"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ratings"; Value = "AEC-Q200"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = "10kR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Series"; Value = "RMCF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Size Code"; Value = "0402"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "3729291"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Coefficient"; Value = "100ppm/°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "50V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Width"; Value = "0.02inch"; VariantName = "[No Variations]"
+Added Component: Designator=SP1(Buzzer)
+Added Pin To Net: NetName=GND Pin=C15-1
+Added Pin To Net: NetName=3.3V_BUS Pin=C15-2
+Added Pin To Net: NetName=GND Pin=C17-1
+Added Pin To Net: NetName=5V Pin=C17-2
+Added Pin To Net: NetName=VCC Pin=C18-1
+Added Pin To Net: NetName=5V Pin=C22-1
+Added Pin To Net: NetName=GND Pin=C22-2
+Added Pin To Net: NetName=GND Pin=D5-1
+Added Pin To Net: NetName=5V Pin=L3-2
+Added Pin To Net: NetName=VCC Pin=PAD13-1
+Added Pin To Net: NetName=GND Pin=Q4-2
+Added Pin To Net: NetName=GND Pin=R53-1
+Added Pin To Net: NetName=5V Pin=R54-2
+Added Pin To Net: NetName=3.3V_BUS Pin=SP1-1
+Added Pin To Net: NetName=VCC Pin=U7-1
+Added Pin To Net: NetName=GND Pin=U7-4
+Added Pin To Net: NetName=GND Pin=U7-5
+Added Pin To Net: NetName=GND Pin=U7-6
+Added Pin To Net: NetName=GND Pin=U7-7
+Added Pin To Net: NetName=GND Pin=U7-8
+Added Pin To Net: NetName=GND Pin=U7-9
+Change Net Name : Old Net Name=NetC15_2 New Net Name=NetC16_1
+Added Pin To Net: NetName=Buz Pin=R52-2
+Added Net: Name=Buz
+Added Pin To Net: NetName=NetD5_K Pin=L3-1
+Added Pin To Net: NetName=NetD5_K Pin=U7-2
+Added Pin To Net: NetName=NetD5_K Pin=D5-2
+Added Net: Name=NetD5_K
+Added Pin To Net: NetName=NetQ4_1 Pin=Q4-1
+Added Pin To Net: NetName=NetQ4_1 Pin=R52-1
+Added Net: Name=NetQ4_1
+Added Pin To Net: NetName=NetQ4_3 Pin=Q4-3
+Added Pin To Net: NetName=NetQ4_3 Pin=SP1-2
+Added Net: Name=NetQ4_3
+Added Pin To Net: NetName=NetR49_2 Pin=R49-2
+Added Pin To Net: NetName=NetR49_2 Pin=U11-6
+Added Net: Name=NetR49_2
+Added Pin To Net: NetName=NetR53_2 Pin=R53-2
+Added Pin To Net: NetName=NetR53_2 Pin=R54-1
+Added Pin To Net: NetName=NetR53_2 Pin=U7-3
+Added Net: Name=NetR53_2
+Added Member To Class: ClassName=hot_air Member=Component C22 1000uF
+Added Member To Class: ClassName=hot_air Member=Component D6 12V
+Added Member To Class: ClassName=hot_air Member=Component L3 47uH
+Added Member To Class: ClassName=hot_air Member=Component Q4 SS8050
+Added Member To Class: ClassName=hot_air Member=Component R52 1K
+Added Member To Class: ClassName=hot_air Member=Component R53 12.7K/1%
+Added Member To Class: ClassName=hot_air Member=Component R54 39K/1%
+Added Member To Class: ClassName=hot_air Member=Component SP1 Buzzer
+Added Room: Name=hot_air

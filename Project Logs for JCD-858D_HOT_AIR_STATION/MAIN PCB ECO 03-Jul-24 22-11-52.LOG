@@ -1,5 +1,0 @@
-Removed Pin From Net: NetName=NetCONN1_6 Pin=D5-1
-Removed Pin From Net: NetName=+12VDC Pin=D5-2
-Change Component Footprint: Designator=D5 Old Footprint=DIO-2AN New Footprint=SOD123
-Added Pin To Net: NetName=NetCONN1_6 Pin=D5-A
-Added Pin To Net: NetName=+12VDC Pin=D5-K

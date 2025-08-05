@@ -1,0 +1,32 @@
+Added Component: Designator=PAD19(THROUGH_HOLE_SMALL)
+Added Component: Designator=PAD20(THROUGH_HOLE_SMALL)
+Added Component: Designator=PAD21(THROUGH_HOLE_SMALL)
+Added Component: Designator=PAD22(THROUGH_HOLE_SMALL)
+Added Component: Designator=PAD23(THROUGH_HOLE_SMALL)
+Added Component: Designator=PAD24(THROUGH_HOLE_SMALL)
+Added Component: Designator=PAD25(THROUGH_HOLE_SMALL)
+Added Component: Designator=PAD26(THROUGH_HOLE_SMALL)
+Added Pin To Net: NetName=GND Pin=PAD19-1
+Added Pin To Net: NetName=5V Pin=PAD20-1
+Added Pin To Net: NetName=BLK Pin=PAD26-1
+Added Net: Name=BLK
+Added Pin To Net: NetName=CS Pin=PAD25-1
+Added Net: Name=CS
+Added Pin To Net: NetName=DC Pin=PAD24-1
+Added Net: Name=DC
+Added Pin To Net: NetName=MOSI Pin=PAD21-1
+Added Pin To Net: NetName=MOSI Pin=U5-31
+Added Net: Name=MOSI
+Added Pin To Net: NetName=RES Pin=PAD23-1
+Added Net: Name=RES
+Added Pin To Net: NetName=SCK Pin=PAD22-1
+Added Pin To Net: NetName=SCK Pin=U5-1
+Added Net: Name=SCK
+Added Member To Class: ClassName=hot_air Member=Component PAD19 Pad_Through_Hole
+Added Member To Class: ClassName=hot_air Member=Component PAD20 Pad_Through_Hole
+Added Member To Class: ClassName=hot_air Member=Component PAD21 Pad_Through_Hole
+Added Member To Class: ClassName=hot_air Member=Component PAD22 Pad_Through_Hole
+Added Member To Class: ClassName=hot_air Member=Component PAD23 Pad_Through_Hole
+Added Member To Class: ClassName=hot_air Member=Component PAD24 Pad_Through_Hole
+Added Member To Class: ClassName=hot_air Member=Component PAD25 Pad_Through_Hole
+Added Member To Class: ClassName=hot_air Member=Component PAD26 Pad_Through_Hole

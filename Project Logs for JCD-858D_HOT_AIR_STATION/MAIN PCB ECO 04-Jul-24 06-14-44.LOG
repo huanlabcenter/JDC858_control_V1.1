@@ -1,4 +1,0 @@
-Removed Pin From Net: NetName=FAN Pin=U5-9
-Removed Pin From Net: NetName=TRIAC Pin=U5-11
-Added Pin To Net: NetName=TRIAC Pin=U5-9
-Added Pin To Net: NetName=FAN Pin=U5-10

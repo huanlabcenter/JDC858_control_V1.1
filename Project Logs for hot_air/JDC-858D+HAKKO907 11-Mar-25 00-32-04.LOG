@@ -1,0 +1,15 @@
+Added Component: Designator=PAD17(THROUGH_HOLE_SMALL)
+Added Component: Designator=PAD18(THROUGH_HOLE_SMALL)
+Added Component: Designator=PAD26(THROUGH_HOLE_SMALL)
+Added Component: Designator=PAD27(THROUGH_HOLE_SMALL)
+Added Pin To Net: NetName=GND Pin=PAD27-1
+Added Pin To Net: NetName=EA Pin=PAD17-1
+Added Net: Name=EA
+Added Pin To Net: NetName=EB Pin=PAD18-1
+Added Net: Name=EB
+Added Pin To Net: NetName=ESW Pin=PAD26-1
+Added Net: Name=ESW
+Added Member To Class: ClassName=hot_air Member=Component PAD17 Pad_Through_Hole
+Added Member To Class: ClassName=hot_air Member=Component PAD18 Pad_Through_Hole
+Added Member To Class: ClassName=hot_air Member=Component PAD26 Pad_Through_Hole
+Added Member To Class: ClassName=hot_air Member=Component PAD27 Pad_Through_Hole

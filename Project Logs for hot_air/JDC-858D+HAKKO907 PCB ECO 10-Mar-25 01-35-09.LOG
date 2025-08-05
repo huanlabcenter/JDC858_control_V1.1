@@ -1,0 +1,86 @@
+Removed Member From Class: ClassName=hot_air Member=PAD26
+Added Component: Designator=C23(C0805)
+Added Component: Designator=C24(C0805)
+Added Component: Designator=PAD8(THROUGH_HOLE_MEDIUM)
+Added Component: Designator=PAD9(THROUGH_HOLE_MEDIUM)
+Added Component: Designator=PAD15(THROUGH_HOLE_MEDIUM)
+Added Component: Designator=PAD16(THROUGH_HOLE_MEDIUM)
+Added Component: Designator=Q6(SOT-23)
+Added Component: Designator=Q7(TO-252-2)
+Added Component: Designator=Q8(SOT-23)
+Added Component: Designator=Q14(SOT-23)
+Added Component: Designator=Q15(SOT-23)
+Added Component: Designator=R27(R0805)
+Added Component: Designator=R55(R0805)
+Added Component: Designator=R56(R0805)
+Added Component: Designator=R60(R0805)
+Added Component: Designator=R61(R0805)
+Added Component: Designator=R64(R0805)
+Added Component: Designator=R65(R0805)
+Added Component: Designator=R66(R0805)
+Added Component: Designator=R67(R0805)
+Added Component: Designator=R68(R0805)
+Added Component: Designator=U8(DIP-8)
+Added Pin To Net: NetName=ADC_HAKKO Pin=C24-1
+Added Pin To Net: NetName=GND Pin=C24-2
+Added Pin To Net: NetName=VCC Pin=PAD15-1
+Added Pin To Net: NetName=12V Pin=Q6-3
+Added Pin To Net: NetName=GND Pin=Q7-3
+Added Pin To Net: NetName=GND Pin=Q8-2
+Added Pin To Net: NetName=GND Pin=Q14-3
+Added Pin To Net: NetName=GND Pin=Q15-2
+Added Pin To Net: NetName=3.3V_BUS Pin=R27-2
+Added Pin To Net: NetName=12V Pin=R55-1
+Added Pin To Net: NetName=12V Pin=R56-1
+Added Pin To Net: NetName=GND Pin=R60-1
+Added Pin To Net: NetName=ADC_HAKKO Pin=R64-1
+Added Pin To Net: NetName=GND Pin=R66-2
+Added Pin To Net: NetName=RES Pin=U5-6
+Added Pin To Net: NetName=DC Pin=U5-7
+Added Pin To Net: NetName=CS Pin=U5-8
+Added Pin To Net: NetName=ADC_HAKKO Pin=U8-1
+Added Pin To Net: NetName=GND Pin=U8-4
+Added Pin To Net: NetName=3.3V_BUS Pin=U8-8
+Added Pin To Net: NetName=HAKKO_HEAT Pin=R67-1
+Added Net: Name=HAKKO_HEAT
+Added Pin To Net: NetName=NetC23_1 Pin=C23-1
+Added Pin To Net: NetName=NetC23_1 Pin=PAD9-1
+Added Pin To Net: NetName=NetC23_1 Pin=R27-1
+Added Pin To Net: NetName=NetC23_1 Pin=R61-1
+Added Net: Name=NetC23_1
+Added Pin To Net: NetName=NetC23_2 Pin=C23-2
+Added Pin To Net: NetName=NetC23_2 Pin=PAD8-1
+Added Pin To Net: NetName=NetC23_2 Pin=R65-1
+Added Pin To Net: NetName=NetC23_2 Pin=R66-1
+Added Net: Name=NetC23_2
+Added Pin To Net: NetName=NetPAD16_1 Pin=PAD16-1
+Added Pin To Net: NetName=NetPAD16_1 Pin=Q7-2
+Added Net: Name=NetPAD16_1
+Added Pin To Net: NetName=NetQ6_1 Pin=Q6-1
+Added Pin To Net: NetName=NetQ6_1 Pin=Q8-3
+Added Pin To Net: NetName=NetQ6_1 Pin=Q14-1
+Added Pin To Net: NetName=NetQ6_1 Pin=R56-2
+Added Net: Name=NetQ6_1
+Added Pin To Net: NetName=NetQ6_2 Pin=Q6-2
+Added Pin To Net: NetName=NetQ6_2 Pin=Q14-2
+Added Pin To Net: NetName=NetQ6_2 Pin=R68-2
+Added Net: Name=NetQ6_2
+Added Pin To Net: NetName=NetQ7_1 Pin=Q7-1
+Added Pin To Net: NetName=NetQ7_1 Pin=R68-1
+Added Net: Name=NetQ7_1
+Added Pin To Net: NetName=NetQ8_1 Pin=Q8-1
+Added Pin To Net: NetName=NetQ8_1 Pin=Q15-3
+Added Pin To Net: NetName=NetQ8_1 Pin=R55-2
+Added Net: Name=NetQ8_1
+Added Pin To Net: NetName=NetQ15_1 Pin=Q15-1
+Added Pin To Net: NetName=NetQ15_1 Pin=R67-2
+Added Net: Name=NetQ15_1
+Added Pin To Net: NetName=NetR60_2 Pin=R60-2
+Added Pin To Net: NetName=NetR60_2 Pin=R61-2
+Added Pin To Net: NetName=NetR60_2 Pin=U8-3
+Added Net: Name=NetR60_2
+Added Pin To Net: NetName=NetR64_2 Pin=R64-2
+Added Pin To Net: NetName=NetR64_2 Pin=R65-2
+Added Pin To Net: NetName=NetR64_2 Pin=U8-2
+Added Net: Name=NetR64_2
+Added Class: Name=quick-907

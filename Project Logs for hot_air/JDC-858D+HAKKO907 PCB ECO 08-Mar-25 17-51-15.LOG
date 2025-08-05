@@ -1,0 +1,13 @@
+Removed Pin From Net: NetName=ADC_THERMAL Pin=U11-1
+Removed Pin From Net: NetName=NetR43_2 Pin=U11-2
+Removed Pin From Net: NetName=NetR41_2 Pin=U11-3
+Removed Pin From Net: NetName=GND Pin=U11-4
+Removed Pin From Net: NetName=3.3V_BUS Pin=U11-8
+Removed Member From Class: ClassName=hot_air Member=U11
+Change Component Comment : Designator=U10 Old Comment=LM358 New Comment=MCP6002
+Change Component Designator: OldDesignator=U10 NewDesignator=U11
+Added Pin To Net: NetName=ADC_THERMAL Pin=U11-1
+Added Pin To Net: NetName=NetR43_2 Pin=U11-2
+Added Pin To Net: NetName=NetR41_2 Pin=U11-3
+Added Pin To Net: NetName=GND Pin=U11-4
+Added Pin To Net: NetName=3.3V_BUS Pin=U11-8

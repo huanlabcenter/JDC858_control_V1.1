@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=3.3V Pin=R11-2
+Removed Pin From Net: NetName=3.3V Pin=U3-8
+Added Component: Designator=C7(C0805)
+Added Pin To Net: NetName=3.3V_BUS Pin=C7-1
+Added Pin To Net: NetName=GND Pin=C7-2
+Added Pin To Net: NetName=3.3V_BUS Pin=R11-2
+Added Pin To Net: NetName=3.3V_BUS Pin=U3-8
+Added Member To Class: ClassName=hot_air Member=Component C7 100uF
+Added Member To Class: ClassName=hot_air Member=Component U11 MCP6002

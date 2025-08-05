@@ -1,0 +1,5 @@
+Added Pin To Net: NetName=JDC_FAN Pin=U5-9
+Added Pin To Net: NetName=HAKKO_HEAT Pin=U5-10
+Added Pin To Net: NetName=TRIAC Pin=U5-15
+Added Pin To Net: NetName=RELAY Pin=U5-16
+Added Pin To Net: NetName=ACDET Pin=U5-17

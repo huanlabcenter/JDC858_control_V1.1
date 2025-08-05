@@ -1,6 +1,0 @@
-Removed Pin From Net: NetName=+12VDC Pin=CONN1-7
-Added Pin To Net: NetName=+12VDC Pin=CONN1-6
-Added Pin To Net: NetName=NetCONN1_7 Pin=CONN1-7
-Added Pin To Net: NetName=NetCONN1_7 Pin=D5-A
-Added Pin To Net: NetName=NetCONN1_7 Pin=Q3-2
-Added Net: Name=NetCONN1_7

@@ -1,0 +1,172 @@
+Move Component(s) Origin to Grid
+Filename     : F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc
+Date         : 11-Mar-25
+Time         : 00:37:36
+Time Elapsed : 00:00:00
+
+
+    Small Component PAD27-Pad_Through_Hole (85.344mm,3.048mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component PAD26-Pad_Through_Hole (94.234mm,3.048mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component PAD18-Pad_Through_Hole (103.124mm,3.048mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component PAD17-Pad_Through_Hole (111.76mm,3.048mm) on Top Layer - Component pads are OFF grid. No action taken.
+    DIP Component U8-MCP6002 (72.39mm,18.034mm) on Top Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R68-100R (53.086mm,34.29mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R67-10K (49.53mm,25.908mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R66-1K (68.834mm,10.668mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R65-2.2K (71.374mm,10.668mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R64-33K (70.104mm,16.764mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R61-2.2K (73.406mm,10.668mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R60-33K (74.676mm,16.764mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R56-500R (46.609mm,33.528mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R55-1K (46.609mm,29.21mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R27-1K (76.2mm,10.668mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component Q15-SS8050 (53.213mm,27.305mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component Q14-SS8550 (53.086mm,30.988mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component Q8-SS8050 (49.53mm,29.464mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component Q7-20N60 (51.562mm,41.402mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component Q6-SS8050 (49.53mm,33.02mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    Small Component PAD16-HAKKO_HEAT (53.594mm,49.276mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component PAD15-HAKKO_HEAT (53.594mm,54.356mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component PAD9-SENSE_HAKKO+ (74.676mm,3.556mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component PAD8-SENSE_HAKKO- (70.358mm,3.556mm) on Top Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component C24-100uF (69.85mm,19.05mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component C23-100uF (72.39mm,7.62mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    Small Component C18-1000uF (20.066mm,36.322mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component SP1-Buzzer (8.128mm,35.377mm) on Top Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R54-39K/1% (21.209mm,24.892mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R53-12.7K/1% (21.209mm,27.686mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R52-1K (5.08mm,31.496mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component Q4-SS8050 (7.112mm,36.068mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component L3-47uH (26.416mm,28.194mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    Small Component C22-1000uF (16.51mm,27.432mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component D6-12V (24.865mm,39.778mm) on Top Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component Q5-SS8050 (32.258mm,38.862mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component C7-100uF (46.736mm,64.516mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component D7 (52.168mm,85.414mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    Small Component PAD25-Pad_Through_Hole (4.064mm,11.938mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component PAD24-Pad_Through_Hole (4.064mm,5.08mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component PAD23-Pad_Through_Hole (4.064mm,16.51mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component PAD22-Pad_Through_Hole (4.064mm,9.652mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component PAD21-Pad_Through_Hole (4.064mm,14.224mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component PAD20-Pad_Through_Hole (4.064mm,7.366mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component PAD19-Pad_Through_Hole (4.064mm,2.794mm) on Top Layer - Component pads are OFF grid. No action taken.
+    DIP Component U11-MCP6002 (72.644mm,35.401mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Component U9-AMS1117-3.3 (8.89mm,24.892mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    Component U7-XL1509-ADJ (18.288mm,31.75mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    DIP Component U6-MOC3021 (55.978mm,94.812mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Component U5-RP2040 (54.102mm,11.684mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Component U4-PC817 (52.168mm,102.432mm) on Top Layer - Component pads are OFF grid. No action taken.
+    SOIC Component U3-LM393 (51.435mm,70.231mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SOIC Component U2-CR6842S-16030AA (36.801mm,116.91mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    Component U1-PC817 (37.817mm,90.367mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    Small Component T2-BTA-16 (68.834mm,114.964mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Component T1-Transformer-Flyback (17.243mm,95.574mm) on Top Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component SD1-1N5820/SS34 (16.227mm,102.813mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    DIP Component RL1-HF115F-I (64.36mm,85.414mm) on Top Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R63-100R (41.91mm,34.29mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R62-10K (34.671mm,25.781mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R59-1K (31.75mm,45.72mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R58-500R (41.91mm,28.009mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R57-1K (41.91mm,25.85mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R51-10K (68.326mm,28.416mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R50-2.2K (72.136mm,28.416mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R49-10K (74.93mm,48.228mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R48-10K (75.946mm,28.416mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R47-2.2K (74.676mm,62.414mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R46-2.2K (78.43mm,62.414mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R45-2.2K (76.553mm,62.414mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R44-2.2K (72.771mm,48.228mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R43-33K (74.93mm,42.386mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R42-2.2K (70.485mm,48.19mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R41-33K (70.104mm,42.386mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R40-2.2K (72.39mm,62.414mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R39-2.2K (70.513mm,62.414mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R38-2.2K (68.636mm,62.414mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R37-100K (77.216mm,48.228mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R36-1K (61.468mm,70.612mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R35-1K (58.42mm,70.612mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R34-100k (68.58mm,113.538mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R33-1K (59.944mm,116.332mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R32-4.7K (31.213mm,72.752mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R31-4.7K (31.213mm,70.212mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R30-33K (34.642mm,71.736mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R29-33K (37.027mm,71.736mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R28-7.5K (37.055mm,76.651mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R26-6.8R (11.176mm,51.054mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R25-3.3k (46.736mm,76.708mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R24-10k (49.087mm,106.848mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R23-10k (49.087mm,110.277mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R22-10k (49.087mm,113.706mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R21-10k (49.087mm,117.135mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R20-10k (49.087mm,120.564mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R19-3.3K (46.736mm,72.39mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R18-10K (52.07mm,76.708mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R17-10k (51.73mm,106.937mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R16-10k (51.73mm,110.357mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R15-10k (51.73mm,113.776mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R14-10k (51.73mm,117.196mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R13-10k (51.73mm,120.615mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R12-10k (54.864mm,92.202mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R11-10K (46.736mm,68.58mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R10-100K (55.118mm,70.612mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R9-0.33R (25.015mm,129.907mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R8-10K (38.608mm,132.842mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R7-24K (34.642mm,108.655mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R6-100R (26.162mm,125.222mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R5-27R (41.148mm,124.206mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R4-820K (6.956mm,100.908mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R3-5.6R (22.069mm,102.432mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R2-820K (6.956mm,103.702mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component R1-100K (8.607mm,117.926mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component Q13-SS8050 (38.227mm,26.416mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component Q12-SS8550 (38.1mm,33.909mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component Q11-SS8050 (38.1mm,30.422mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component Q10-20N60 (43.688mm,41.402mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component Q9-SS8050 (41.91mm,30.93mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component Q3-SS8050 (60.198mm,76.708mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component Q2-SS8050 (56.642mm,76.708mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    Small Component Q1-20N60 (38.608mm,126.964mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component PAD14-JDC-FAN- (43.688mm,49.276mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component PAD13-JDC-FAN+ (43.688mm,54.356mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component PAD12-SENSE (70.104mm,58.388mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component PAD11-GND_SENSE (77.216mm,58.388mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component PAD10-HALL (77.216mm,52.038mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component PAD7-MASS (68.58mm,54.356mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component PAD6-HEAT (70.104mm,71.374mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component PAD5-HEAT (77.216mm,71.374mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component PAD4-Pad_Through_Hole (47.723mm,143.165mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component PAD3-Pad_Through_Hole (52.803mm,143.165mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component PAD2-Pad_Through_Hole (50.448mm,131.582mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component PAD1-Pad_Through_Hole (47.723mm,135.037mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component NTC1-5D-9 (6.575mm,140.913mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component L2-10mH (21.336mm,46.482mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Component L1-UU9.8mH (23.847mm,141.294mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component F2-10A (68.834mm,133.682mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component F1-3.15A/250V (38.579mm,143.834mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Component DB2-KPB210 (54.61mm,131.064mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    Component DB1-KPB210 (13.687mm,141.294mm) on Top Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component D5-1N5822/SS34 (24.892mm,35.56mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component D4-TL431 (31.213mm,76.651mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    Small Component D3-B20100G (21.984mm,57.982mm) on Top Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component D2-1N4148 (43.434mm,123.19mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    Small Component D1-1N4007 (26.387mm,113.354mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component C21-220uF (31.748mm,42.162mm) on Top Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component C20-100uF (65.786mm,38.576mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component C19-100uF (65.786mm,31.464mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component C17-100nF (16.256mm,25.019mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component C16-100uF (73.533mm,58.388mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component C15-100nF (12.954mm,29.718mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    Small Component C14-222/1kV (32.991mm,92.272mm) on Top Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component C13-33nF (34.515mm,76.651mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    Small Component C12-1000uF/35V (33.02mm,52.578mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component C11-1000uF/35V (9.946mm,46.99mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component C10-222/1KV (11.938mm,55.372mm) on Top Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component C9-2.2uF (49.022mm,76.708mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component C8-10pF (56.134mm,67.31mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component C6-100nF (23.368mm,121.666mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    SMT Small Component C5-22nF (40.484mm,111.068mm) on Bottom Layer - Component pads are OFF grid. No action taken.
+    Small Component C4-22uF/50V (34.515mm,104.21mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component C3-470nF/1kV (7.845mm,113.608mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component C2-X2-222-250v (32.943mm,141.206mm) on Top Layer - Component pads are OFF grid. No action taken.
+    Small Component C1-82uF/400V (11.655mm,124.53mm) on Top Layer - Component pads are OFF grid. No action taken.
+count : 164

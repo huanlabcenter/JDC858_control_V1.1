@@ -1,6 +1,0 @@
-Removed Pin From Net: NetName=ROTA_SW Pin=U5-19
-Removed Pin From Net: NetName=ROTA_CLK Pin=U5-25
-Removed Pin From Net: NetName=ROTA_DATA Pin=U5-26
-Added Pin To Net: NetName=ROTA_DATA Pin=U5-19
-Added Pin To Net: NetName=ROTA_SW Pin=U5-25
-Added Pin To Net: NetName=ROTA_CLK Pin=U5-26

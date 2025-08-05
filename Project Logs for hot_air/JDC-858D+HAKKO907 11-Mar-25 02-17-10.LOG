@@ -1,0 +1,18 @@
+Removed Pin From Net: NetName=Buz Pin=PAD17-1
+Removed Pin From Net: NetName=Buz Pin=U5-13
+Added Component: Designator=R69(R0805)
+Added Component: Designator=R70(R0805)
+Added Component: Designator=R71(R0805)
+Added Pin To Net: NetName=3.3V_BUS Pin=R69-1
+Added Pin To Net: NetName=3.3V_BUS Pin=R70-1
+Added Pin To Net: NetName=EB Pin=R70-2
+Added Pin To Net: NetName=3.3V_BUS Pin=R71-1
+Added Pin To Net: NetName=ESW Pin=R71-2
+Added Pin To Net: NetName=Buz Pin=U5-11
+Added Pin To Net: NetName=EA Pin=PAD17-1
+Added Pin To Net: NetName=EA Pin=R69-2
+Added Pin To Net: NetName=EA Pin=U5-13
+Added Net: Name=EA
+Added Member To Class: ClassName=hot_air Member=Component R69 3.3K
+Added Member To Class: ClassName=hot_air Member=Component R70 3.3K
+Added Member To Class: ClassName=hot_air Member=Component R71 3.3K

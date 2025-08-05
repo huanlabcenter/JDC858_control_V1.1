@@ -1,0 +1,695 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 { 
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body { 
+			font-family : segoe ui;
+		}
+
+		td, th {  
+			padding: 0.5em;
+			text-align : left;
+		}
+		th { 
+			background-color : #EEEEEE;
+		
+		}
+		th.column1, td.column1 { 
+			width : 50%; 
+		}
+
+        th.column2, td.column2 {
+            width : 25%;
+        }
+
+		table { 
+			width : 100%; 
+            font-size: 0.9em;
+		}
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 5em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error { 
+			color : red;
+			font-weight : bold;
+		}	
+		tr.onmouseout_odd { 
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+			
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);		
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {	
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}	
+	</script><title>Move Component(s) Origin to Grid</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Program Files\Altium\AD21\Templates\AD_logo.png
+		"><a href="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports" class="customize"><acronym title="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports">customize</acronym></a><h1>Move Component(s) Origin to Grid</h1>
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">11-Mar-25</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:37:36</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc" class="file"><acronym title="F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc">F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc</acronym></a></td>
+</tr>
+</table><a name="IDHBCX2NRVHCOKMXKORGFS0GN20EJY43RPMGBLRUOR0CBAGCCZZ4GF"><h2>Components Origin</h2></a><a name="ID1FXM2MNDKFLDCMKDLATWJUTXGPDBVE25R5JVOIMTM5A0W2EE5SQL"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="warning"></th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5610.567mil|Location2.X=5689.433mil|Location1.Y=1600.567mil|Location2.Y=1679.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5610.567mil|Location2.X=5689.433mil|Location1.Y=1600.567mil|Location2.Y=1679.433mil|Absolute=True">Small Component PAD27-Pad_Through_Hole (85.344mm,3.048mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5960.567mil|Location2.X=6039.433mil|Location1.Y=1600.567mil|Location2.Y=1679.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5960.567mil|Location2.X=6039.433mil|Location1.Y=1600.567mil|Location2.Y=1679.433mil|Absolute=True">Small Component PAD26-Pad_Through_Hole (94.234mm,3.048mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6310.567mil|Location2.X=6389.433mil|Location1.Y=1600.567mil|Location2.Y=1679.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6310.567mil|Location2.X=6389.433mil|Location1.Y=1600.567mil|Location2.Y=1679.433mil|Absolute=True">Small Component PAD18-Pad_Through_Hole (103.124mm,3.048mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6650.567mil|Location2.X=6729.433mil|Location1.Y=1600.567mil|Location2.Y=1679.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6650.567mil|Location2.X=6729.433mil|Location1.Y=1600.567mil|Location2.Y=1679.433mil|Absolute=True">Small Component PAD17-Pad_Through_Hole (111.76mm,3.048mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4942.092mil|Location2.X=5337.917mil|Location1.Y=2025.567mil|Location2.Y=2434.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4942.092mil|Location2.X=5337.917mil|Location1.Y=2025.567mil|Location2.Y=2434.433mil|Absolute=True">DIP Component U8-MCP6002 (72.39mm,18.034mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4310.047mil|Location2.X=4449.952mil|Location1.Y=2833.047mil|Location2.Y=2906.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4310.047mil|Location2.X=4449.952mil|Location1.Y=2833.047mil|Location2.Y=2906.953mil|Absolute=True">SMT Small Component R68-100R (53.086mm,34.29mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4170.047mil|Location2.X=4309.952mil|Location1.Y=2503.047mil|Location2.Y=2576.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4170.047mil|Location2.X=4309.952mil|Location1.Y=2503.047mil|Location2.Y=2576.953mil|Absolute=True">SMT Small Component R67-10K (49.53mm,25.908mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4963.047mil|Location2.X=5036.952mil|Location1.Y=1870.047mil|Location2.Y=2009.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4963.047mil|Location2.X=5036.952mil|Location1.Y=1870.047mil|Location2.Y=2009.953mil|Absolute=True">SMT Small Component R66-1K (68.834mm,10.668mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5063.047mil|Location2.X=5136.952mil|Location1.Y=1870.047mil|Location2.Y=2009.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5063.047mil|Location2.X=5136.952mil|Location1.Y=1870.047mil|Location2.Y=2009.953mil|Absolute=True">SMT Small Component R65-2.2K (71.374mm,10.668mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4980.047mil|Location2.X=5119.952mil|Location1.Y=2143.047mil|Location2.Y=2216.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4980.047mil|Location2.X=5119.952mil|Location1.Y=2143.047mil|Location2.Y=2216.953mil|Absolute=True">SMT Small Component R64-33K (70.104mm,16.764mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5143.047mil|Location2.X=5216.952mil|Location1.Y=1870.047mil|Location2.Y=2009.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5143.047mil|Location2.X=5216.952mil|Location1.Y=1870.047mil|Location2.Y=2009.953mil|Absolute=True">SMT Small Component R61-2.2K (73.406mm,10.668mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5160.047mil|Location2.X=5299.952mil|Location1.Y=2143.047mil|Location2.Y=2216.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5160.047mil|Location2.X=5299.952mil|Location1.Y=2143.047mil|Location2.Y=2216.953mil|Absolute=True">SMT Small Component R60-33K (74.676mm,16.764mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4088.047mil|Location2.X=4161.952mil|Location1.Y=2770.047mil|Location2.Y=2909.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4088.047mil|Location2.X=4161.952mil|Location1.Y=2770.047mil|Location2.Y=2909.953mil|Absolute=True">SMT Small Component R56-500R (46.609mm,33.528mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4088.047mil|Location2.X=4161.952mil|Location1.Y=2600.047mil|Location2.Y=2739.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4088.047mil|Location2.X=4161.952mil|Location1.Y=2600.047mil|Location2.Y=2739.953mil|Absolute=True">SMT Small Component R55-1K (46.609mm,29.21mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5253.047mil|Location2.X=5326.952mil|Location1.Y=1870.047mil|Location2.Y=2009.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5253.047mil|Location2.X=5326.952mil|Location1.Y=1870.047mil|Location2.Y=2009.953mil|Absolute=True">SMT Small Component R27-1K (76.2mm,10.668mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4320.173mil|Location2.X=4446.716mil|Location1.Y=2528.047mil|Location2.Y=2661.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4320.173mil|Location2.X=4446.716mil|Location1.Y=2528.047mil|Location2.Y=2661.953mil|Absolute=True">SMT Small Component Q15-SS8050 (53.213mm,27.305mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4315.173mil|Location2.X=4441.716mil|Location1.Y=2673.047mil|Location2.Y=2806.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4315.173mil|Location2.X=4441.716mil|Location1.Y=2673.047mil|Location2.Y=2806.953mil|Absolute=True">SMT Small Component Q14-SS8550 (53.086mm,30.988mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4173.047mil|Location2.X=4306.952mil|Location1.Y=2618.284mil|Location2.Y=2744.827mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4173.047mil|Location2.X=4306.952mil|Location1.Y=2618.284mil|Location2.Y=2744.827mil|Absolute=True">SMT Small Component Q8-SS8050 (49.53mm,29.464mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4179.999mil|Location2.X=4459.999mil|Location1.Y=2932.693mil|Location2.Y=3384.984mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4179.999mil|Location2.X=4459.999mil|Location1.Y=2932.693mil|Location2.Y=3384.984mil|Absolute=True">SMT Small Component Q7-20N60 (51.562mm,41.402mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4168.283mil|Location2.X=4304.826mil|Location1.Y=2753.047mil|Location2.Y=2886.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4168.283mil|Location2.X=4304.826mil|Location1.Y=2753.047mil|Location2.Y=2886.953mil|Absolute=True">SMT Small Component Q6-SS8050 (49.53mm,33.02mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4336.944mil|Location2.X=4463.055mil|Location1.Y=3396.945mil|Location2.Y=3523.055mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4336.944mil|Location2.X=4463.055mil|Location1.Y=3396.945mil|Location2.Y=3523.055mil|Absolute=True">Small Component PAD16-HAKKO_HEAT (53.594mm,49.276mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4336.944mil|Location2.X=4463.055mil|Location1.Y=3596.945mil|Location2.Y=3723.055mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4336.944mil|Location2.X=4463.055mil|Location1.Y=3596.945mil|Location2.Y=3723.055mil|Absolute=True">Small Component PAD15-HAKKO_HEAT (53.594mm,54.356mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5166.944mil|Location2.X=5293.055mil|Location1.Y=1596.945mil|Location2.Y=1723.055mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5166.944mil|Location2.X=5293.055mil|Location1.Y=1596.945mil|Location2.Y=1723.055mil|Absolute=True">Small Component PAD9-SENSE_HAKKO+ (74.676mm,3.556mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4996.944mil|Location2.X=5123.055mil|Location1.Y=1596.945mil|Location2.Y=1723.055mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4996.944mil|Location2.X=5123.055mil|Location1.Y=1596.945mil|Location2.Y=1723.055mil|Absolute=True">Small Component PAD8-SENSE_HAKKO- (70.358mm,3.556mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4970.047mil|Location2.X=5109.952mil|Location1.Y=2234.047mil|Location2.Y=2305.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4970.047mil|Location2.X=5109.952mil|Location1.Y=2234.047mil|Location2.Y=2305.953mil|Absolute=True">SMT Small Component C24-100uF (69.85mm,19.05mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5070.047mil|Location2.X=5209.952mil|Location1.Y=1784.047mil|Location2.Y=1855.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5070.047mil|Location2.X=5209.952mil|Location1.Y=1784.047mil|Location2.Y=1855.953mil|Absolute=True">SMT Small Component C23-100uF (72.39mm,7.62mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2917.519mil|Location2.X=3242.48mil|Location1.Y=2787.523mil|Location2.Y=3112.484mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2917.519mil|Location2.X=3242.48mil|Location1.Y=2787.523mil|Location2.Y=3112.484mil|Absolute=True">Small Component C18-1000uF (20.066mm,36.322mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2368.778mil|Location2.X=2851.22mil|Location1.Y=2671.575mil|Location2.Y=3154.016mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2368.778mil|Location2.X=2851.22mil|Location1.Y=2671.575mil|Location2.Y=3154.016mil|Absolute=True">Small Component SP1-Buzzer (8.128mm,35.377mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3097.015mil|Location2.X=3152.968mil|Location1.Y=2451.032mil|Location2.Y=2548.968mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3097.015mil|Location2.X=3152.968mil|Location1.Y=2451.032mil|Location2.Y=2548.968mil|Absolute=True">SMT Small Component R54-39K/1% (21.209mm,24.892mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3097.015mil|Location2.X=3152.968mil|Location1.Y=2561.032mil|Location2.Y=2658.968mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3097.015mil|Location2.X=3152.968mil|Location1.Y=2561.032mil|Location2.Y=2658.968mil|Absolute=True">SMT Small Component R53-12.7K/1% (21.209mm,27.686mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2453.047mil|Location2.X=2526.952mil|Location1.Y=2690.047mil|Location2.Y=2829.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2453.047mil|Location2.X=2526.952mil|Location1.Y=2690.047mil|Location2.Y=2829.953mil|Absolute=True">SMT Small Component R52-1K (5.08mm,31.496mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2505.173mil|Location2.X=2631.716mil|Location1.Y=2873.047mil|Location2.Y=3006.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2505.173mil|Location2.X=2631.716mil|Location1.Y=2873.047mil|Location2.Y=3006.953mil|Absolute=True">SMT Small Component Q4-SS8050 (7.112mm,36.068mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3190.236mil|Location2.X=3469.764mil|Location1.Y=2438.992mil|Location2.Y=2821.008mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3190.236mil|Location2.X=3469.764mil|Location1.Y=2438.992mil|Location2.Y=2821.008mil|Absolute=True">SMT Small Component L3-47uH (26.416mm,28.194mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2777.519mil|Location2.X=3102.48mil|Location1.Y=2437.523mil|Location2.Y=2762.483mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2777.519mil|Location2.X=3102.48mil|Location1.Y=2437.523mil|Location2.Y=2762.483mil|Absolute=True">Small Component C22-1000uF (16.51mm,27.432mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3193.498mil|Location2.X=3436.334mil|Location1.Y=2918.665mil|Location2.Y=3161.506mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3193.498mil|Location2.X=3436.334mil|Location1.Y=2918.665mil|Location2.Y=3161.506mil|Absolute=True">Small Component D6-12V (24.865mm,39.778mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3493.047mil|Location2.X=3626.952mil|Location1.Y=2988.284mil|Location2.Y=3114.827mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3493.047mil|Location2.X=3626.952mil|Location1.Y=2988.284mil|Location2.Y=3114.827mil|Absolute=True">SMT Small Component Q5-SS8050 (32.258mm,38.862mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4094.047mil|Location2.X=4165.952mil|Location1.Y=3990.047mil|Location2.Y=4129.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4094.047mil|Location2.X=4165.952mil|Location1.Y=3990.047mil|Location2.Y=4129.953mil|Absolute=True">SMT Small Component C7-100uF (46.736mm,64.516mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4304.487mil|Location2.X=4383.228mil|Location1.Y=4790.324mil|Location2.Y=4975.175mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4304.487mil|Location2.X=4383.228mil|Location1.Y=4790.324mil|Location2.Y=4975.175mil|Absolute=True">SMT Small Component D7 (52.168mm,85.414mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2410.566mil|Location2.X=2489.432mil|Location1.Y=1950.567mil|Location2.Y=2029.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2410.566mil|Location2.X=2489.432mil|Location1.Y=1950.567mil|Location2.Y=2029.433mil|Absolute=True">Small Component PAD25-Pad_Through_Hole (4.064mm,11.938mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2410.566mil|Location2.X=2489.432mil|Location1.Y=1680.567mil|Location2.Y=1759.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2410.566mil|Location2.X=2489.432mil|Location1.Y=1680.567mil|Location2.Y=1759.433mil|Absolute=True">Small Component PAD24-Pad_Through_Hole (4.064mm,5.08mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2410.566mil|Location2.X=2489.432mil|Location1.Y=2130.567mil|Location2.Y=2209.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2410.566mil|Location2.X=2489.432mil|Location1.Y=2130.567mil|Location2.Y=2209.433mil|Absolute=True">Small Component PAD23-Pad_Through_Hole (4.064mm,16.51mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2410.566mil|Location2.X=2489.432mil|Location1.Y=1860.567mil|Location2.Y=1939.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2410.566mil|Location2.X=2489.432mil|Location1.Y=1860.567mil|Location2.Y=1939.433mil|Absolute=True">Small Component PAD22-Pad_Through_Hole (4.064mm,9.652mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2410.566mil|Location2.X=2489.432mil|Location1.Y=2040.567mil|Location2.Y=2119.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2410.566mil|Location2.X=2489.432mil|Location1.Y=2040.567mil|Location2.Y=2119.433mil|Absolute=True">Small Component PAD21-Pad_Through_Hole (4.064mm,14.224mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2410.566mil|Location2.X=2489.432mil|Location1.Y=1770.567mil|Location2.Y=1849.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2410.566mil|Location2.X=2489.432mil|Location1.Y=1770.567mil|Location2.Y=1849.433mil|Absolute=True">Small Component PAD20-Pad_Through_Hole (4.064mm,7.366mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2410.566mil|Location2.X=2489.432mil|Location1.Y=1590.567mil|Location2.Y=1669.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2410.566mil|Location2.X=2489.432mil|Location1.Y=1590.567mil|Location2.Y=1669.433mil|Absolute=True">Small Component PAD19-Pad_Through_Hole (4.064mm,2.794mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4952.082mil|Location2.X=5347.906mil|Location1.Y=2709.297mil|Location2.Y=3118.163mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4952.082mil|Location2.X=5347.906mil|Location1.Y=2709.297mil|Location2.Y=3118.163mil|Absolute=True">DIP Component U11-MCP6002 (72.644mm,35.401mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2473.24mil|Location2.X=2808.37mil|Location1.Y=2363.115mil|Location2.Y=2636.885mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2473.24mil|Location2.X=2808.37mil|Location1.Y=2363.115mil|Location2.Y=2636.885mil|Absolute=True">Component U9-AMS1117-3.3 (8.89mm,24.892mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2855.566mil|Location2.X=3164.433mil|Location1.Y=2671.578mil|Location2.Y=2888.811mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2855.566mil|Location2.X=3164.433mil|Location1.Y=2671.578mil|Location2.Y=2888.811mil|Absolute=True">Component U7-XL1509-ADJ (18.288mm,31.75mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4420.623mil|Location2.X=4767.081mil|Location1.Y=5215.291mil|Location2.Y=5590.233mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4420.623mil|Location2.X=4767.081mil|Location1.Y=5215.291mil|Location2.Y=5590.233mil|Absolute=True">DIP Component U6-MOC3021 (55.978mm,94.812mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2994.737mil|Location2.X=4425.001mil|Location1.Y=1614.764mil|Location2.Y=2345.238mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2994.737mil|Location2.X=4425.001mil|Location1.Y=1614.764mil|Location2.Y=2345.238mil|Absolute=True">Component U5-RP2040 (54.102mm,11.684mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4190.358mil|Location2.X=4397.737mil|Location1.Y=5199.256mil|Location2.Y=5606.256mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4190.358mil|Location2.X=4397.737mil|Location1.Y=5199.256mil|Location2.Y=5606.256mil|Absolute=True">Component U4-PC817 (52.168mm,102.432mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4216.572mil|Location2.X=4413.422mil|Location1.Y=4130.567mil|Location2.Y=4439.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4216.572mil|Location2.X=4413.422mil|Location1.Y=4130.567mil|Location2.Y=4439.433mil|Absolute=True">SOIC Component U3-LM393 (51.435mm,70.231mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3640.436mil|Location2.X=3837.287mil|Location1.Y=5968.323mil|Location2.Y=6277.189mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3640.436mil|Location2.X=3837.287mil|Location1.Y=5968.323mil|Location2.Y=6277.189mil|Absolute=True">SOIC Component U2-CR6842S-16030AA (36.801mm,116.91mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3688.697mil|Location2.X=3869.012mil|Location1.Y=4854.386mil|Location2.Y=5301.113mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3688.697mil|Location2.X=3869.012mil|Location1.Y=4854.386mil|Location2.Y=5301.113mil|Absolute=True">Component U1-PC817 (37.817mm,90.367mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4790.276mil|Location2.X=5209.723mil|Location1.Y=6041.121mil|Location2.Y=6224.349mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4790.276mil|Location2.X=5209.723mil|Location1.Y=6041.121mil|Location2.Y=6224.349mil|Absolute=True">Small Component T2-BTA-16 (68.834mm,114.964mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2333.858mil|Location2.X=3603.858mil|Location1.Y=4597.756mil|Location2.Y=5967.756mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2333.858mil|Location2.X=3603.858mil|Location1.Y=4597.756mil|Location2.Y=5967.756mil|Absolute=True">Component T1-Transformer-Flyback (17.243mm,95.574mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2774.921mil|Location2.X=3072.795mil|Location1.Y=5503.819mil|Location2.Y=5635.552mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2774.921mil|Location2.X=3072.795mil|Location1.Y=5503.819mil|Location2.Y=5635.552mil|Absolute=True">SMT Small Component SD1-1N5820/SS34 (16.227mm,102.813mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4247.991mil|Location2.X=5399.725mil|Location1.Y=4627.756mil|Location2.Y=5137.756mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4247.991mil|Location2.X=5399.725mil|Location1.Y=4627.756mil|Location2.Y=5137.756mil|Absolute=True">DIP Component RL1-HF115F-I (64.36mm,85.414mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3870.047mil|Location2.X=4009.952mil|Location1.Y=2833.047mil|Location2.Y=2906.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3870.047mil|Location2.X=4009.952mil|Location1.Y=2833.047mil|Location2.Y=2906.953mil|Absolute=True">SMT Small Component R63-100R (41.91mm,34.29mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3585.047mil|Location2.X=3724.952mil|Location1.Y=2498.047mil|Location2.Y=2571.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3585.047mil|Location2.X=3724.952mil|Location1.Y=2498.047mil|Location2.Y=2571.953mil|Absolute=True">SMT Small Component R62-10K (34.671mm,25.781mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3470.047mil|Location2.X=3609.952mil|Location1.Y=3283.047mil|Location2.Y=3356.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3470.047mil|Location2.X=3609.952mil|Location1.Y=3283.047mil|Location2.Y=3356.953mil|Absolute=True">SMT Small Component R59-1K (31.75mm,45.72mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3870.047mil|Location2.X=4009.952mil|Location1.Y=2585.764mil|Location2.Y=2659.669mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3870.047mil|Location2.X=4009.952mil|Location1.Y=2585.764mil|Location2.Y=2659.669mil|Absolute=True">SMT Small Component R58-500R (41.91mm,28.009mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3870.047mil|Location2.X=4009.952mil|Location1.Y=2500.764mil|Location2.Y=2574.669mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3870.047mil|Location2.X=4009.952mil|Location1.Y=2500.764mil|Location2.Y=2574.669mil|Absolute=True">SMT Small Component R57-1K (41.91mm,25.85mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4910.047mil|Location2.X=5049.952mil|Location1.Y=2601.778mil|Location2.Y=2675.683mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4910.047mil|Location2.X=5049.952mil|Location1.Y=2601.778mil|Location2.Y=2675.683mil|Absolute=True">SMT Small Component R51-10K (68.326mm,28.416mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5060.047mil|Location2.X=5199.952mil|Location1.Y=2601.778mil|Location2.Y=2675.683mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5060.047mil|Location2.X=5199.952mil|Location1.Y=2601.778mil|Location2.Y=2675.683mil|Absolute=True">SMT Small Component R50-2.2K (72.136mm,28.416mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5203.047mil|Location2.X=5276.952mil|Location1.Y=3348.778mil|Location2.Y=3488.683mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5203.047mil|Location2.X=5276.952mil|Location1.Y=3348.778mil|Location2.Y=3488.683mil|Absolute=True">SMT Small Component R49-10K (74.93mm,48.228mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5210.047mil|Location2.X=5349.952mil|Location1.Y=2601.778mil|Location2.Y=2675.683mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5210.047mil|Location2.X=5349.952mil|Location1.Y=2601.778mil|Location2.Y=2675.683mil|Absolute=True">SMT Small Component R48-10K (75.946mm,28.416mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5193.047mil|Location2.X=5266.952mil|Location1.Y=3907.282mil|Location2.Y=4047.187mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5193.047mil|Location2.X=5266.952mil|Location1.Y=3907.282mil|Location2.Y=4047.187mil|Absolute=True">SMT Small Component R47-2.2K (74.676mm,62.414mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5340.858mil|Location2.X=5414.763mil|Location1.Y=3907.282mil|Location2.Y=4047.187mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5340.858mil|Location2.X=5414.763mil|Location1.Y=3907.282mil|Location2.Y=4047.187mil|Absolute=True">SMT Small Component R46-2.2K (78.43mm,62.414mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5266.952mil|Location2.X=5340.858mil|Location1.Y=3907.282mil|Location2.Y=4047.187mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5266.952mil|Location2.X=5340.858mil|Location1.Y=3907.282mil|Location2.Y=4047.187mil|Absolute=True">SMT Small Component R45-2.2K (76.553mm,62.414mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5118.047mil|Location2.X=5191.952mil|Location1.Y=3348.778mil|Location2.Y=3488.683mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5118.047mil|Location2.X=5191.952mil|Location1.Y=3348.778mil|Location2.Y=3488.683mil|Absolute=True">SMT Small Component R44-2.2K (72.771mm,48.228mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5170.047mil|Location2.X=5309.952mil|Location1.Y=3151.778mil|Location2.Y=3225.683mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5170.047mil|Location2.X=5309.952mil|Location1.Y=3151.778mil|Location2.Y=3225.683mil|Absolute=True">SMT Small Component R43-33K (74.93mm,42.386mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5028.047mil|Location2.X=5101.952mil|Location1.Y=3347.282mil|Location2.Y=3487.187mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5028.047mil|Location2.X=5101.952mil|Location1.Y=3347.282mil|Location2.Y=3487.187mil|Absolute=True">SMT Small Component R42-2.2K (70.485mm,48.19mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4980.047mil|Location2.X=5119.952mil|Location1.Y=3151.778mil|Location2.Y=3225.683mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4980.047mil|Location2.X=5119.952mil|Location1.Y=3151.778mil|Location2.Y=3225.683mil|Absolute=True">SMT Small Component R41-33K (70.104mm,42.386mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5103.047mil|Location2.X=5176.952mil|Location1.Y=3907.282mil|Location2.Y=4047.187mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5103.047mil|Location2.X=5176.952mil|Location1.Y=3907.282mil|Location2.Y=4047.187mil|Absolute=True">SMT Small Component R40-2.2K (72.39mm,62.414mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5029.141mil|Location2.X=5103.047mil|Location1.Y=3907.282mil|Location2.Y=4047.187mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5029.141mil|Location2.X=5103.047mil|Location1.Y=3907.282mil|Location2.Y=4047.187mil|Absolute=True">SMT Small Component R39-2.2K (70.513mm,62.414mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4955.236mil|Location2.X=5029.141mil|Location1.Y=3907.282mil|Location2.Y=4047.187mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4955.236mil|Location2.X=5029.141mil|Location1.Y=3907.282mil|Location2.Y=4047.187mil|Absolute=True">SMT Small Component R38-2.2K (68.636mm,62.414mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5293.047mil|Location2.X=5366.952mil|Location1.Y=3348.778mil|Location2.Y=3488.683mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5293.047mil|Location2.X=5366.952mil|Location1.Y=3348.778mil|Location2.Y=3488.683mil|Absolute=True">SMT Small Component R37-100K (77.216mm,48.228mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4673.047mil|Location2.X=4746.953mil|Location1.Y=4230.047mil|Location2.Y=4369.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4673.047mil|Location2.X=4746.953mil|Location1.Y=4230.047mil|Location2.Y=4369.953mil|Absolute=True">SMT Small Component R36-1K (61.468mm,70.612mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4553.047mil|Location2.X=4626.953mil|Location1.Y=4230.047mil|Location2.Y=4369.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4553.047mil|Location2.X=4626.953mil|Location1.Y=4230.047mil|Location2.Y=4369.953mil|Absolute=True">SMT Small Component R35-1K (58.42mm,70.612mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4921.771mil|Location2.X=5058.228mil|Location1.Y=5952.008mil|Location2.Y=6027.992mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4921.771mil|Location2.X=5058.228mil|Location1.Y=5952.008mil|Location2.Y=6027.992mil|Absolute=True">SMT Small Component R34-100k (68.58mm,113.538mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4583.007mil|Location2.X=4716.992mil|Location1.Y=5943.444mil|Location2.Y=6256.543mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4583.007mil|Location2.X=4716.992mil|Location1.Y=5943.444mil|Location2.Y=6256.543mil|Absolute=True">SMT Small Component R33-1K (59.944mm,116.332mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3448.905mil|Location2.X=3588.811mil|Location1.Y=4347.299mil|Location2.Y=4421.205mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3448.905mil|Location2.X=3588.811mil|Location1.Y=4347.299mil|Location2.Y=4421.205mil|Absolute=True">SMT Small Component R32-4.7K (31.213mm,72.752mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3448.905mil|Location2.X=3588.811mil|Location1.Y=4247.299mil|Location2.Y=4321.205mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3448.905mil|Location2.X=3588.811mil|Location1.Y=4247.299mil|Location2.Y=4321.205mil|Absolute=True">SMT Small Component R31-4.7K (31.213mm,70.212mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3616.905mil|Location2.X=3690.811mil|Location1.Y=4274.299mil|Location2.Y=4414.205mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3616.905mil|Location2.X=3690.811mil|Location1.Y=4274.299mil|Location2.Y=4414.205mil|Absolute=True">SMT Small Component R30-33K (34.642mm,71.736mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3710.811mil|Location2.X=3784.716mil|Location1.Y=4274.299mil|Location2.Y=4414.205mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3710.811mil|Location2.X=3784.716mil|Location1.Y=4274.299mil|Location2.Y=4414.205mil|Absolute=True">SMT Small Component R29-33K (37.027mm,71.736mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3711.905mil|Location2.X=3785.811mil|Location1.Y=4467.803mil|Location2.Y=4607.709mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3711.905mil|Location2.X=3785.811mil|Location1.Y=4467.803mil|Location2.Y=4607.709mil|Absolute=True">SMT Small Component R28-7.5K (37.055mm,76.651mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2655.629mil|Location2.X=2804.37mil|Location1.Y=3455.63mil|Location2.Y=3604.371mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2655.629mil|Location2.X=2804.37mil|Location1.Y=3455.63mil|Location2.Y=3604.371mil|Absolute=True">SMT Small Component R26-6.8R (11.176mm,51.054mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4093.047mil|Location2.X=4166.953mil|Location1.Y=4470.047mil|Location2.Y=4609.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4093.047mil|Location2.X=4166.953mil|Location1.Y=4470.047mil|Location2.Y=4609.953mil|Absolute=True">SMT Small Component R25-3.3k (46.736mm,76.708mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4185.615mil|Location2.X=4259.52mil|Location1.Y=5656.662mil|Location2.Y=5796.567mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4185.615mil|Location2.X=4259.52mil|Location1.Y=5656.662mil|Location2.Y=5796.567mil|Absolute=True">SMT Small Component R24-10k (49.087mm,106.848mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4185.615mil|Location2.X=4259.52mil|Location1.Y=5791.662mil|Location2.Y=5931.567mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4185.615mil|Location2.X=4259.52mil|Location1.Y=5791.662mil|Location2.Y=5931.567mil|Absolute=True">SMT Small Component R23-10k (49.087mm,110.277mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4185.615mil|Location2.X=4259.52mil|Location1.Y=5926.662mil|Location2.Y=6066.567mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4185.615mil|Location2.X=4259.52mil|Location1.Y=5926.662mil|Location2.Y=6066.567mil|Absolute=True">SMT Small Component R22-10k (49.087mm,113.706mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4185.615mil|Location2.X=4259.52mil|Location1.Y=6061.662mil|Location2.Y=6201.567mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4185.615mil|Location2.X=4259.52mil|Location1.Y=6061.662mil|Location2.Y=6201.567mil|Absolute=True">SMT Small Component R21-10k (49.087mm,117.135mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4185.615mil|Location2.X=4259.52mil|Location1.Y=6196.662mil|Location2.Y=6336.567mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4185.615mil|Location2.X=4259.52mil|Location1.Y=6196.662mil|Location2.Y=6336.567mil|Absolute=True">SMT Small Component R20-10k (49.087mm,120.564mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4093.047mil|Location2.X=4166.953mil|Location1.Y=4300.047mil|Location2.Y=4439.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4093.047mil|Location2.X=4166.953mil|Location1.Y=4300.047mil|Location2.Y=4439.953mil|Absolute=True">SMT Small Component R19-3.3K (46.736mm,72.39mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4303.047mil|Location2.X=4376.953mil|Location1.Y=4470.047mil|Location2.Y=4609.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4303.047mil|Location2.X=4376.953mil|Location1.Y=4470.047mil|Location2.Y=4609.953mil|Absolute=True">SMT Small Component R18-10K (52.07mm,76.708mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4289.661mil|Location2.X=4363.566mil|Location1.Y=5660.166mil|Location2.Y=5800.071mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4289.661mil|Location2.X=4363.566mil|Location1.Y=5660.166mil|Location2.Y=5800.071mil|Absolute=True">SMT Small Component R17-10k (51.73mm,106.937mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4289.661mil|Location2.X=4363.566mil|Location1.Y=5794.792mil|Location2.Y=5934.697mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4289.661mil|Location2.X=4363.566mil|Location1.Y=5794.792mil|Location2.Y=5934.697mil|Absolute=True">SMT Small Component R16-10k (51.73mm,110.357mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4289.661mil|Location2.X=4363.566mil|Location1.Y=5929.417mil|Location2.Y=6069.323mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4289.661mil|Location2.X=4363.566mil|Location1.Y=5929.417mil|Location2.Y=6069.323mil|Absolute=True">SMT Small Component R15-10k (51.73mm,113.776mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4289.661mil|Location2.X=4363.566mil|Location1.Y=6064.043mil|Location2.Y=6203.949mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4289.661mil|Location2.X=4363.566mil|Location1.Y=6064.043mil|Location2.Y=6203.949mil|Absolute=True">SMT Small Component R14-10k (51.73mm,117.196mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4289.661mil|Location2.X=4363.566mil|Location1.Y=6198.669mil|Location2.Y=6338.575mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4289.661mil|Location2.X=4363.566mil|Location1.Y=6198.669mil|Location2.Y=6338.575mil|Absolute=True">SMT Small Component R13-10k (51.73mm,120.615mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4380.047mil|Location2.X=4519.953mil|Location1.Y=5113.047mil|Location2.Y=5186.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4380.047mil|Location2.X=4519.953mil|Location1.Y=5113.047mil|Location2.Y=5186.953mil|Absolute=True">SMT Small Component R12-10k (54.864mm,92.202mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4093.047mil|Location2.X=4166.953mil|Location1.Y=4150.047mil|Location2.Y=4289.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4093.047mil|Location2.X=4166.953mil|Location1.Y=4150.047mil|Location2.Y=4289.953mil|Absolute=True">SMT Small Component R11-10K (46.736mm,68.58mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4423.047mil|Location2.X=4496.953mil|Location1.Y=4230.047mil|Location2.Y=4369.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4423.047mil|Location2.X=4496.953mil|Location1.Y=4230.047mil|Location2.Y=4369.953mil|Absolute=True">SMT Small Component R10-100K (55.118mm,70.612mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3118.295mil|Location2.X=3431.394mil|Location1.Y=6567.455mil|Location2.Y=6701.439mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3118.295mil|Location2.X=3431.394mil|Location1.Y=6567.455mil|Location2.Y=6701.439mil|Absolute=True">SMT Small Component R9-0.33R (25.015mm,129.907mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3740.047mil|Location2.X=3879.952mil|Location1.Y=6713.047mil|Location2.Y=6786.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3740.047mil|Location2.X=3879.952mil|Location1.Y=6713.047mil|Location2.Y=6786.953mil|Absolute=True">SMT Small Component R8-10K (38.608mm,132.842mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3583.905mil|Location2.X=3723.811mil|Location1.Y=5760.803mil|Location2.Y=5834.709mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3583.905mil|Location2.X=3723.811mil|Location1.Y=5760.803mil|Location2.Y=5834.709mil|Absolute=True">SMT Small Component R7-24K (34.642mm,108.655mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3283.047mil|Location2.X=3356.952mil|Location1.Y=6380.047mil|Location2.Y=6519.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3283.047mil|Location2.X=3356.952mil|Location1.Y=6380.047mil|Location2.Y=6519.953mil|Absolute=True">SMT Small Component R6-100R (26.162mm,125.222mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3873.047mil|Location2.X=3946.952mil|Location1.Y=6340.047mil|Location2.Y=6479.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3873.047mil|Location2.X=3946.952mil|Location1.Y=6340.047mil|Location2.Y=6479.953mil|Absolute=True">SMT Small Component R5-27R (41.148mm,124.206mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2493.905mil|Location2.X=2633.811mil|Location1.Y=5455.803mil|Location2.Y=5529.709mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2493.905mil|Location2.X=2633.811mil|Location1.Y=5455.803mil|Location2.Y=5529.709mil|Absolute=True">SMT Small Component R4-820K (6.956mm,100.908mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3088.905mil|Location2.X=3228.811mil|Location1.Y=5515.803mil|Location2.Y=5589.709mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3088.905mil|Location2.X=3228.811mil|Location1.Y=5515.803mil|Location2.Y=5589.709mil|Absolute=True">SMT Small Component R3-5.6R (22.069mm,102.432mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2493.905mil|Location2.X=2633.811mil|Location1.Y=5565.803mil|Location2.Y=5639.709mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2493.905mil|Location2.X=2633.811mil|Location1.Y=5565.803mil|Location2.Y=5639.709mil|Absolute=True">SMT Small Component R2-820K (6.956mm,103.702mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2472.302mil|Location2.X=2785.401mil|Location1.Y=6095.764mil|Location2.Y=6229.748mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2472.302mil|Location2.X=2785.401mil|Location1.Y=6095.764mil|Location2.Y=6229.748mil|Absolute=True">SMT Small Component R1-100K (8.607mm,117.926mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3730.173mil|Location2.X=3856.716mil|Location1.Y=2493.047mil|Location2.Y=2626.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3730.173mil|Location2.X=3856.716mil|Location1.Y=2493.047mil|Location2.Y=2626.953mil|Absolute=True">SMT Small Component Q13-SS8050 (38.227mm,26.416mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3723.283mil|Location2.X=3854.826mil|Location1.Y=2788.047mil|Location2.Y=2921.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3723.283mil|Location2.X=3854.826mil|Location1.Y=2788.047mil|Location2.Y=2921.953mil|Absolute=True">SMT Small Component Q12-SS8550 (38.1mm,33.909mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3723.047mil|Location2.X=3856.952mil|Location1.Y=2652.89mil|Location2.Y=2779.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3723.047mil|Location2.X=3856.952mil|Location1.Y=2652.89mil|Location2.Y=2779.433mil|Absolute=True">SMT Small Component Q11-SS8050 (38.1mm,30.422mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3869.999mil|Location2.X=4149.999mil|Location1.Y=2932.693mil|Location2.Y=3384.984mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3869.999mil|Location2.X=4149.999mil|Location1.Y=2932.693mil|Location2.Y=3384.984mil|Absolute=True">SMT Small Component Q10-20N60 (43.688mm,41.402mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3873.047mil|Location2.X=4006.952mil|Location1.Y=2676mil|Location2.Y=2802.543mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3873.047mil|Location2.X=4006.952mil|Location1.Y=2676mil|Location2.Y=2802.543mil|Absolute=True">SMT Small Component Q9-SS8050 (41.91mm,30.93mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4593.047mil|Location2.X=4726.953mil|Location1.Y=4475.173mil|Location2.Y=4601.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4593.047mil|Location2.X=4726.953mil|Location1.Y=4475.173mil|Location2.Y=4601.717mil|Absolute=True">SMT Small Component Q3-SS8050 (60.198mm,76.708mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4453.047mil|Location2.X=4586.953mil|Location1.Y=4475.173mil|Location2.Y=4601.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4453.047mil|Location2.X=4586.953mil|Location1.Y=4475.173mil|Location2.Y=4601.717mil|Absolute=True">SMT Small Component Q2-SS8050 (56.642mm,76.708mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3600.27mil|Location2.X=4019.716mil|Location1.Y=6513.576mil|Location2.Y=6696.805mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3600.27mil|Location2.X=4019.716mil|Location1.Y=6513.576mil|Location2.Y=6696.805mil|Absolute=True">Small Component Q1-20N60 (38.608mm,126.964mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3946.944mil|Location2.X=4073.055mil|Location1.Y=3396.945mil|Location2.Y=3523.055mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3946.944mil|Location2.X=4073.055mil|Location1.Y=3396.945mil|Location2.Y=3523.055mil|Absolute=True">Small Component PAD14-JDC-FAN- (43.688mm,49.276mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3946.944mil|Location2.X=4073.055mil|Location1.Y=3596.945mil|Location2.Y=3723.055mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3946.944mil|Location2.X=4073.055mil|Location1.Y=3596.945mil|Location2.Y=3723.055mil|Absolute=True">Small Component PAD13-JDC-FAN+ (43.688mm,54.356mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4986.944mil|Location2.X=5113.055mil|Location1.Y=3755.675mil|Location2.Y=3881.785mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4986.944mil|Location2.X=5113.055mil|Location1.Y=3755.675mil|Location2.Y=3881.785mil|Absolute=True">Small Component PAD12-SENSE (70.104mm,58.388mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5266.944mil|Location2.X=5393.055mil|Location1.Y=3755.675mil|Location2.Y=3881.785mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5266.944mil|Location2.X=5393.055mil|Location1.Y=3755.675mil|Location2.Y=3881.785mil|Absolute=True">Small Component PAD11-GND_SENSE (77.216mm,58.388mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5266.944mil|Location2.X=5393.055mil|Location1.Y=3505.675mil|Location2.Y=3631.785mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5266.944mil|Location2.X=5393.055mil|Location1.Y=3505.675mil|Location2.Y=3631.785mil|Absolute=True">Small Component PAD10-HALL (77.216mm,52.038mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4926.944mil|Location2.X=5053.055mil|Location1.Y=3596.945mil|Location2.Y=3723.055mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4926.944mil|Location2.X=5053.055mil|Location1.Y=3596.945mil|Location2.Y=3723.055mil|Absolute=True">Small Component PAD7-MASS (68.58mm,54.356mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4986.945mil|Location2.X=5113.055mil|Location1.Y=4266.945mil|Location2.Y=4393.055mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4986.945mil|Location2.X=5113.055mil|Location1.Y=4266.945mil|Location2.Y=4393.055mil|Absolute=True">Small Component PAD6-HEAT (70.104mm,71.374mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5266.944mil|Location2.X=5393.055mil|Location1.Y=4266.945mil|Location2.Y=4393.055mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5266.944mil|Location2.X=5393.055mil|Location1.Y=4266.945mil|Location2.Y=4393.055mil|Absolute=True">Small Component PAD5-HEAT (77.216mm,71.374mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4105.803mil|Location2.X=4231.913mil|Location1.Y=7093.344mil|Location2.Y=7219.454mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4105.803mil|Location2.X=4231.913mil|Location1.Y=7093.344mil|Location2.Y=7219.454mil|Absolute=True">Small Component PAD4-Pad_Through_Hole (47.723mm,143.165mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4420.764mil|Location2.X=4546.874mil|Location1.Y=7093.344mil|Location2.Y=7219.454mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4420.764mil|Location2.X=4546.874mil|Location1.Y=7093.344mil|Location2.Y=7219.454mil|Absolute=True">Small Component PAD3-Pad_Through_Hole (52.803mm,143.165mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4420.763mil|Location2.X=4546.873mil|Location1.Y=6896.494mil|Location2.Y=7022.604mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4420.763mil|Location2.X=4546.873mil|Location1.Y=6896.494mil|Location2.Y=7022.604mil|Absolute=True">Small Component PAD2-Pad_Through_Hole (50.448mm,131.582mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4105.803mil|Location2.X=4231.913mil|Location1.Y=6896.494mil|Location2.Y=7022.604mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4105.803mil|Location2.X=4231.913mil|Location1.Y=6896.494mil|Location2.Y=7022.604mil|Absolute=True">Small Component PAD1-Pad_Through_Hole (47.723mm,135.037mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2425.748mil|Location2.X=2671.965mil|Location1.Y=6758.649mil|Location2.Y=7378.882mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2425.748mil|Location2.X=2671.965mil|Location1.Y=6758.649mil|Location2.Y=7378.882mil|Absolute=True">Small Component NTC1-5D-9 (6.575mm,140.913mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2899.683mil|Location2.X=3360.31mil|Location1.Y=3119.69mil|Location2.Y=3580.317mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2899.683mil|Location2.X=3360.31mil|Location1.Y=3119.69mil|Location2.Y=3580.317mil|Absolute=True">Small Component L2-10mH (21.336mm,46.482mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3013.231mil|Location2.X=3444.492mil|Location1.Y=6788.378mil|Location2.Y=7377.118mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3013.231mil|Location2.X=3444.492mil|Location1.Y=6788.378mil|Location2.Y=7377.118mil|Absolute=True">Component L1-UU9.8mH (23.847mm,141.294mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4806.011mil|Location2.X=5193.975mil|Location1.Y=6306.63mil|Location2.Y=7259.512mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4806.011mil|Location2.X=5193.975mil|Location1.Y=6306.63mil|Location2.Y=7259.512mil|Absolute=True">Small Component F2-10A (68.834mm,133.682mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3744.803mil|Location2.X=3872.913mil|Location1.Y=7020.276mil|Location2.Y=7345.236mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3744.803mil|Location2.X=3872.913mil|Location1.Y=7020.276mil|Location2.Y=7345.236mil|Absolute=True">Small Component F1-3.15A/250V (38.579mm,143.834mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4281.629mil|Location2.X=4598.37mil|Location1.Y=6575mil|Location2.Y=6785mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4281.629mil|Location2.X=4598.37mil|Location1.Y=6575mil|Location2.Y=6785mil|Absolute=True">Component DB2-KPB210 (54.61mm,131.064mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2728.488mil|Location2.X=2929.234mil|Location1.Y=6787.986mil|Location2.Y=7377.513mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2728.488mil|Location2.X=2929.234mil|Location1.Y=6787.986mil|Location2.Y=7377.513mil|Absolute=True">Component DB1-KPB210 (13.687mm,141.294mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3212.381mil|Location2.X=3328.995mil|Location1.Y=2790.016mil|Location2.Y=3049.984mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3212.381mil|Location2.X=3328.995mil|Location1.Y=2790.016mil|Location2.Y=3049.984mil|Absolute=True">SMT Small Component D5-1N5822/SS34 (24.892mm,35.56mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3451.905mil|Location2.X=3585.811mil|Location1.Y=4472.929mil|Location2.Y=4599.472mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3451.905mil|Location2.X=3585.811mil|Location1.Y=4472.929mil|Location2.Y=4599.472mil|Absolute=True">SMT Small Component D4-TL431 (31.213mm,76.651mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2945.795mil|Location2.X=3365.241mil|Location1.Y=3624.533mil|Location2.Y=3807.762mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2945.795mil|Location2.X=3365.241mil|Location1.Y=3624.533mil|Location2.Y=3807.762mil|Absolute=True">Small Component D3-B20100G (21.984mm,57.982mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3956.062mil|Location2.X=4043.936mil|Location1.Y=6256.063mil|Location2.Y=6483.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3956.062mil|Location2.X=4043.936mil|Location1.Y=6256.063mil|Location2.Y=6483.937mil|Absolute=True">SMT Small Component D2-1N4148 (43.434mm,123.19mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2889.425mil|Location2.X=3368.291mil|Location1.Y=5932.252mil|Location2.Y=6037.756mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2889.425mil|Location2.X=3368.291mil|Location1.Y=5932.252mil|Location2.Y=6037.756mil|Absolute=True">Small Component D1-1N4007 (26.387mm,113.354mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3337.165mil|Location2.X=3742.677mil|Location1.Y=2977.165mil|Location2.Y=3382.677mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3337.165mil|Location2.X=3742.677mil|Location1.Y=2977.165mil|Location2.Y=3382.677mil|Absolute=True">Small Component C21-220uF (31.748mm,42.162mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4844.047mil|Location2.X=4915.952mil|Location1.Y=2968.778mil|Location2.Y=3108.683mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4844.047mil|Location2.X=4915.952mil|Location1.Y=2968.778mil|Location2.Y=3108.683mil|Absolute=True">SMT Small Component C20-100uF (65.786mm,38.576mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4844.047mil|Location2.X=4915.952mil|Location1.Y=2688.778mil|Location2.Y=2828.683mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4844.047mil|Location2.X=4915.952mil|Location1.Y=2688.778mil|Location2.Y=2828.683mil|Absolute=True">SMT Small Component C19-100uF (65.786mm,31.464mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2823.062mil|Location2.X=3036.936mil|Location1.Y=2461.063mil|Location2.Y=2548.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2823.062mil|Location2.X=3036.936mil|Location1.Y=2461.063mil|Location2.Y=2548.937mil|Absolute=True">SMT Small Component C17-100nF (16.256mm,25.019mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5115.047mil|Location2.X=5254.952mil|Location1.Y=3782.778mil|Location2.Y=3854.683mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5115.047mil|Location2.X=5254.952mil|Location1.Y=3782.778mil|Location2.Y=3854.683mil|Absolute=True">SMT Small Component C16-100uF (73.533mm,58.388mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2693.062mil|Location2.X=2906.936mil|Location1.Y=2646.063mil|Location2.Y=2733.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2693.062mil|Location2.X=2906.936mil|Location1.Y=2646.063mil|Location2.Y=2733.937mil|Absolute=True">SMT Small Component C15-100nF (12.954mm,29.718mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3513.05mil|Location2.X=3664.679mil|Location1.Y=5005.39mil|Location2.Y=5300.068mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3513.05mil|Location2.X=3664.679mil|Location1.Y=5005.39mil|Location2.Y=5300.068mil|Absolute=True">Small Component C14-222/1kV (32.991mm,92.272mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3612.905mil|Location2.X=3684.811mil|Location1.Y=4467.803mil|Location2.Y=4607.709mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3612.905mil|Location2.X=3684.811mil|Location1.Y=4467.803mil|Location2.Y=4607.709mil|Absolute=True">SMT Small Component C13-33nF (34.515mm,76.651mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3387.244mil|Location2.X=3792.755mil|Location1.Y=3387.244mil|Location2.Y=3792.756mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3387.244mil|Location2.X=3792.755mil|Location1.Y=3387.244mil|Location2.Y=3792.756mil|Absolute=True">Small Component C12-1000uF/35V (33.02mm,52.578mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2478.818mil|Location2.X=2884.33mil|Location1.Y=3167.244mil|Location2.Y=3572.756mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2478.818mil|Location2.X=2884.33mil|Location1.Y=3167.244mil|Location2.Y=3572.756mil|Absolute=True">Small Component C11-1000uF/35V (9.946mm,46.99mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2594.472mil|Location2.X=2925.486mil|Location1.Y=3560.654mil|Location2.Y=3839.308mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2594.472mil|Location2.X=2925.486mil|Location1.Y=3560.654mil|Location2.Y=3839.308mil|Absolute=True">Small Component C10-222/1KV (11.938mm,55.372mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4184.047mil|Location2.X=4255.953mil|Location1.Y=4470.047mil|Location2.Y=4609.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4184.047mil|Location2.X=4255.953mil|Location1.Y=4470.047mil|Location2.Y=4609.953mil|Absolute=True">SMT Small Component C9-2.2uF (49.022mm,76.708mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4430.047mil|Location2.X=4569.953mil|Location1.Y=4134.047mil|Location2.Y=4205.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4430.047mil|Location2.X=4569.953mil|Location1.Y=4134.047mil|Location2.Y=4205.953mil|Absolute=True">SMT Small Component C8-10pF (56.134mm,67.31mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3140.047mil|Location2.X=3279.952mil|Location1.Y=6274.047mil|Location2.Y=6345.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3140.047mil|Location2.X=3279.952mil|Location1.Y=6274.047mil|Location2.Y=6345.953mil|Absolute=True">SMT Small Component C6-100nF (23.368mm,121.666mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3847.905mil|Location2.X=3919.811mil|Location1.Y=5822.803mil|Location2.Y=5962.709mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3847.905mil|Location2.X=3919.811mil|Location1.Y=5822.803mil|Location2.Y=5962.709mil|Absolute=True">SMT Small Component C5-22nF (40.484mm,111.068mm) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3519.843mil|Location2.X=3777.874mil|Location1.Y=5493.74mil|Location2.Y=5751.772mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3519.843mil|Location2.X=3777.874mil|Location1.Y=5493.74mil|Location2.Y=5751.772mil|Absolute=True">Small Component C4-22uF/50V (34.515mm,104.21mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2451.492mil|Location2.X=2746.17mil|Location1.Y=5916.935mil|Location2.Y=6068.564mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2451.492mil|Location2.X=2746.17mil|Location1.Y=5916.935mil|Location2.Y=6068.564mil|Absolute=True">Small Component C3-470nF/1kV (7.845mm,113.608mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3483.528mil|Location2.X=3690.379mil|Location1.Y=6818.373mil|Location2.Y=7340.181mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3483.528mil|Location2.X=3690.379mil|Location1.Y=6818.373mil|Location2.Y=7340.181mil|Absolute=True">Small Component C2-X2-222-250v (32.943mm,141.206mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2426.027mil|Location2.X=3071.696mil|Location1.Y=6099.925mil|Location2.Y=6745.594mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\ALTIUM\hot_air\JDC-858D+HAKKO907.~(178).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2426.027mil|Location2.X=3071.696mil|Location1.Y=6099.925mil|Location2.Y=6745.594mil|Absolute=True">Small Component C1-82uF/400V (11.655mm,124.53mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

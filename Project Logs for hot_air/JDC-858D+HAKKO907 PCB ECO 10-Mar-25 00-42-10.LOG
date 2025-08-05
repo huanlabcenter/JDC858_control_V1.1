@@ -1,0 +1,2 @@
+Removed Pin From Net: NetName=3.3V_BUS Pin=SP1-1
+Added Pin To Net: NetName=5V Pin=SP1-1
